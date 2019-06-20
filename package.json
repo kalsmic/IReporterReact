@@ -8,10 +8,15 @@
     "build": "webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "lint": "eslint",
+    "stylelint": "stylelint '**/*.scss'; exit 0",
+    "prettify": "prettier --write"
   },
   "jest": {
-    "roots": ["<rootDir>/src"],
+    "roots": [
+      "<rootDir>/src"
+    ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/tests/setupTests.js"
     ],
@@ -22,37 +27,99 @@
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "identity-obj-proxy"
     },
-    "testMatch": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
     "moduleDirectories": [
       "src",
       "node_modules"
     ],
-    "moduleFileExtensions": ["css", "scss", "js", "json", "jsx"],
-    "transformIgnorePatterns": ["/node_modules/(?!test-component).+\\.js$"]
+    "moduleFileExtensions": [
+      "css",
+      "scss",
+      "js",
+      "json",
+      "jsx"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!test-component).+\\.js$"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "ignore": [],
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint src/ --fix",
+        "npm run prettify",
+        "git add"
+      ],
+      "*.{scss,css}": [
+        "stylelint '**/*.scss'",
+        "git add"
+      ]
+    }
+  },
+  "lint-committed": {
+    "ignore": [],
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint src/",
+        "npm run lint",
+        "npm run test"
+      ],
+      "*.{scss}": [
+        "npm run stylelint"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "jest-enzyme": "^7.0.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/travis-cli": "^8.0.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "coveralls": "^3.0.3",
     "css-loader": "^2.1.1",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "eslint-watch": "^5.1.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "jest-css-modules-transform": "^2.5.0",
-    "jest-enzyme": "^7.0.2",
+    "lint-staged": "^8.2.1",
     "node-sass": "^4.12.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "stylelint": "^10.1.0",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1"
