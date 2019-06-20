@@ -22,7 +22,7 @@ describe("Welcome Header", () => {
 
   it("renders welcome message", () => {
     const wrapper = findByTestAttr(component, "welcomeHeader");
-    const welcome = <h1>Welcome to IReporter React</h1>;
+    const welcome =   <h1 >Welcome to <span id="logo" >iReporter</span> React</h1>;
     expect(wrapper.contains(welcome)).toBe(true);
     expect(wrapper.contains(welcome)).toEqual(true);
   });

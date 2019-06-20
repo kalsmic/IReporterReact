@@ -11,9 +11,24 @@
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "jest": {
+    "roots": ["<rootDir>/src"],
     "setupFilesAfterEnv": [
       "<rootDir>/src/tests/setupTests.js"
-    ]
+    ],
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "testMatch": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "moduleFileExtensions": ["css", "scss", "js", "json", "jsx"],
+    "transformIgnorePatterns": ["/node_modules/(?!test-component).+\\.js$"]
   },
   "keywords": [],
   "author": "",
@@ -29,10 +44,14 @@
     "enzyme-adapter-react-16": "^1.13.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
+    "jest-css-modules-transform": "^2.5.0",
     "jest-enzyme": "^7.0.2",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
