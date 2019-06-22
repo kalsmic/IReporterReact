@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
-import '../../assets/Main.scss';
 import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Login from '../Login';
 import Root from '../Common/Root';
+import '../../assets/Main.scss';
+import { isAuthenticated } from '../../../utils';
+
 
 class IReporterApp extends Component {
-  state = {
-    isLoggedIn: false,
-  };
-
   render() {
-    const Home = () => (<Root><h1>Welcome home</h1></Root>);
     const CreateIncident = () => (<Root><h1>Create Incident Page</h1></Root>);
     const ViewIncident = () => (<Root><h1>View incidents page</h1></Root>);
-    const { isLoggedIn } = this.state;
     const AuthenticatedRoute = (
       {
         component: ProtectedComponent,
@@ -24,10 +20,29 @@ class IReporterApp extends Component {
 
       <Route
         {...extraProps}
-        render={props => (isLoggedIn ? (
+        render={props => (isAuthenticated() ? (
           <ProtectedComponent {...props} />
         ) : (
-          <Redirect to="/login" />
+          <Redirect to="/" />
+        ))
+        }
+      />
+    );
+    const OnlyNoneAuthenticatedRoute = (
+      {
+        component: ProtectedComponent,
+        ...extraProps
+      }
+    ) => (
+
+      <Route
+        {...extraProps}
+        render={props => (isAuthenticated() ? (
+          <Redirect to="/viewIncident" />
+
+        ) : (
+          <ProtectedComponent {...props} />
+
         ))
         }
       />
@@ -37,8 +52,7 @@ class IReporterApp extends Component {
       <Router>
         <Switch>
 
-          <Route path="/" exact strict component={Home} />
-          <Route path="/login" exact strict component={Login} />
+          <OnlyNoneAuthenticatedRoute path="/" exact strict component={Login} />
 
           <AuthenticatedRoute
             path="/createIncident"
@@ -53,5 +67,6 @@ class IReporterApp extends Component {
     );
   }
 }
+
 
 export default IReporterApp;

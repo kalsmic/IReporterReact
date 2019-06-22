@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
   display: grid;
   grid-gap: 20px;
-  grid-template-areas: "header" "menu" "content" "footer";
+  grid-template-areas: "header" "loginRegister" "menu" "content" "footer";
   grid-template-rows: 70px 1fr 70px;
 
   &__header {
@@ -25,6 +25,10 @@ body {
 
   &__menu {
     grid-area: menu;
+  }
+
+  &__login_register {
+    grid-area: loginRegister;
   }
 
   &__page-content {
@@ -39,7 +43,10 @@ body {
 
 @media (min-width: 700px) {
   .wrapper {
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas: "header header  header" "menu content content" "menu content content" "footer footer  footer";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "header header  header"
+      ". loginRegister ."
+      "menu content content"
+      "menu content content" "footer footer  footer";
   }
 }
