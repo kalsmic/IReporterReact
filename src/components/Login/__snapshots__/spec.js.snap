@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Component should render without crushing 1`] = `
+<div
+  className="wrapper"
+>
+  <Header />
+  <div
+    className="wrapper__login_register border-round-lg"
+  >
+    <h3>
+      Login Here !
+    </h3>
+    <form
+      className="wrapper__login_register__form"
+      onSubmit={[Function]}
+    >
+      <input
+        className="wrapper__login_register__form__input"
+        name="username"
+        onChange={[Function]}
+        placeholder="USERNAME"
+        type="text"
+        value=""
+      />
+      <input
+        className="wrapper__login_register__form__input"
+        name="password"
+        onChange={[Function]}
+        placeholder="PASSWORD"
+        type="password"
+        value=""
+      />
+      <button
+        className="wrapper__login_register__form__submit"
+        name="login"
+        type="submit"
+      >
+        Login
+      </button>
+      <Link
+        replace={false}
+        to="/signup"
+      >
+         Create an account
+      </Link>
+    </form>
+  </div>
+  <Footer />
+</div>
+`;

@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { Login, mapStateToProps, mapDispatchToProps } from './index';
+import { Login, mapDispatchToProps, mapStateToProps } from './index';
 
 describe('Login Component', () => {
   const authenticateUserFn = jest.fn();
@@ -8,6 +8,7 @@ describe('Login Component', () => {
     authenticateUser: authenticateUserFn,
     error: '',
     message: '',
+    isLoggedIn: false,
   };
   const wrapper = shallow(<Login {...props} />);
 
@@ -35,7 +36,7 @@ describe('Login Component', () => {
         type: 'submit',
         name: 'login',
       },
-      preventDefault: jest.fn()
+      preventDefault: jest.fn(),
     };
 
     instance.handleSubmit(event);
@@ -51,6 +52,17 @@ describe('Login Component', () => {
     expect(instance.props.authenticateUser).toBeCalled();
   });
 
+  it('should show messages to the user', () => {
+    wrapper.setProps({ error: 'Invalid credentials' });
+    wrapper.setState({ isSubmitted: true });
+    expect(wrapper.find('.error-msg').text()).toBe('Invalid credentials');
+    wrapper.setProps({
+      error: '',
+      message: 'login successful',
+    });
+    expect(wrapper.find('.success-msg').text()).toBe('login successful');
+  });
+
 
   it('should map state to props', () => {
     const mockedState = {
@@ -58,8 +70,8 @@ describe('Login Component', () => {
         message: 'logged in Successfully',
         isLoggedIn: true,
         isLoading: false,
-        error: ''
-      }
+        error: '',
+      },
     };
     const state = mapStateToProps(mockedState);
     expect(state.message).toBe('logged in Successfully');

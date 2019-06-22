@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import NavBar from '../NavBar';
 import Header from './Header';
 
@@ -21,5 +23,9 @@ class Root extends Component {
     );
   }
 }
+
+Root.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Root;

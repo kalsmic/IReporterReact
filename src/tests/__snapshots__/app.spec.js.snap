@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IReporterApp Component should render without crashing 1`] = `
+<BrowserRouter>
+  <Switch>
+    <OnlyNoneAuthenticatedRoute
+      component={[Function]}
+      exact={true}
+      path="/"
+      strict={true}
+    />
+    <OnlyNoneAuthenticatedRoute
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(SignUp)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/signup"
+      strict={true}
+    />
+    <AuthenticatedRoute
+      component={[Function]}
+      exact={true}
+      path="/createIncident"
+      strict={true}
+    />
+    <AuthenticatedRoute
+      component={[Function]}
+      exact={true}
+      path="/viewIncident"
+      strict={true}
+    />
+  </Switch>
+</BrowserRouter>
+`;

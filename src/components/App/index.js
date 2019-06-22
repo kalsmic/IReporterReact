@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Login from '../Login';
+import SignUp from '../SignUp';
+
 import Root from '../Common/Root';
 import '../../assets/Main.scss';
 import { isAuthenticated } from '../../../utils';
@@ -53,6 +55,7 @@ class IReporterApp extends Component {
         <Switch>
 
           <OnlyNoneAuthenticatedRoute path="/" exact strict component={Login} />
+          <OnlyNoneAuthenticatedRoute path="/signup" exact strict component={SignUp} />
 
           <AuthenticatedRoute
             path="/createIncident"

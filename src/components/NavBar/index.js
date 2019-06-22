@@ -6,11 +6,11 @@ const NavBar = () => (
     <ul className="menu_list">
       <li className="menu_list__item">
         <NavLink
-          to="/"
+          to="/signup"
           exact
           activeClassName="menu_"
         >
-          Home
+          SignUp
         </NavLink>
       </li>
       <li className="">
