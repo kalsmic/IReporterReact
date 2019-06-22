@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../NavBar';
+import Header from './Header';
 
 class Root extends Component {
   render() {
@@ -7,9 +8,7 @@ class Root extends Component {
 
     return (
       <div className="wrapper">
-        <div className="wrapper__header">
-          Header
-        </div>
+        <Header />
         <NavBar />
         <div className="wrapper__page-content">
           {children}
