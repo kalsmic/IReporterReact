@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login Component should render without crushing 1`] = `
+exports[`Sign up Component should render without crushing 1`] = `
 <div
   className="wrapper"
 >
@@ -9,7 +9,7 @@ exports[`Login Component should render without crushing 1`] = `
     className="wrapper__login_register border-round-lg"
   >
     <h3>
-      Login Here !
+      Create an account !
     </h3>
     <form
       className="wrapper__login_register__form"
@@ -20,7 +20,17 @@ exports[`Login Component should render without crushing 1`] = `
         name="username"
         onChange={[Function]}
         placeholder="USERNAME"
+        required={true}
         type="text"
+        value=""
+      />
+      <input
+        className="wrapper__login_register__form__input"
+        name="email"
+        onChange={[Function]}
+        placeholder="EMAIL ADDRESS"
+        required={true}
+        type="email"
         value=""
       />
       <input
@@ -28,21 +38,22 @@ exports[`Login Component should render without crushing 1`] = `
         name="password"
         onChange={[Function]}
         placeholder="PASSWORD"
+        required={true}
         type="password"
         value=""
       />
       <button
         className="wrapper__login_register__form__submit"
-        name="login"
+        name="signup"
         type="submit"
       >
-        Login
+        SIGNUP
       </button>
       <Link
         replace={false}
-        to="/signup"
+        to="/"
       >
-         Create an account
+         Click Here to Login
       </Link>
     </form>
   </div>

@@ -11,7 +11,7 @@ body {
 }
 
 .wrapper {
-  height: 100vh;
+  //height: 100vh;
 
   margin: 0 auto;
   display: grid;
@@ -49,4 +49,10 @@ body {
       "menu content content"
       "menu content content" "footer footer  footer";
   }
+}
+
+.border-round-lg {
+  background: rgba(67, 91, 106, 0.71);
+  border-radius: 32px;
+  padding: 20px;
 }

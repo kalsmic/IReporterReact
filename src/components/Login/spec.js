@@ -51,6 +51,17 @@ describe('Login Component', () => {
     expect(instance.props.authenticateUser).toBeCalled();
   });
 
+  it('should show messages to the user', () => {
+    wrapper.setProps({ error: 'Invalid credentials' });
+    wrapper.setState({ isSubmitted: true });
+    expect(wrapper.find('.error-msg').text()).toBe('Invalid credentials');
+    wrapper.setProps({
+      error: '',
+      message: 'login successful',
+    });
+    expect(wrapper.find('.success-msg').text()).toBe('login successful');
+  });
+
 
   it('should map state to props', () => {
     const mockedState = {
