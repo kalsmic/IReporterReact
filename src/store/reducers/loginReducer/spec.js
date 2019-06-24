@@ -32,7 +32,7 @@ describe('login Reducer', () => {
       email: 'admin@ireporter.com',
       phoneNumber: '0772019937',
       username: 'admin',
-      registeredOn: 'Fri, 28 Dec 2018 00:00:00 GMT'
+      registeredOn: 'Fri, 28 Dec 2018 00:00:00 GMT',
     };
 
     const message = 'Logged in successfully';
@@ -66,7 +66,7 @@ describe('login Reducer', () => {
       isLoggedIn: false,
       error: authError,
       user: {},
-      message: ''
+      message: '',
     });
   });
 

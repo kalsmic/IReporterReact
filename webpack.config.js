@@ -35,6 +35,10 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpeg|jpg|png|gif|woff|woff2|eot|ttf|svg|ico)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000'
+      },
     ],
   },
   devServer: {

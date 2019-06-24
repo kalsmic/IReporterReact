@@ -3,21 +3,20 @@ import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Login from '../Login';
 import SignUp from '../SignUp';
+import CreateIncident from '../CreateIncident';
+import ViewIncident from '../ViewIncident';
 
-import Root from '../Common/Root';
 import '../../assets/Main.scss';
 import { isAuthenticated } from '../../../utils';
 
 
 class IReporterApp extends Component {
   render() {
-    const CreateIncident = () => (<Root><h1>Create Incident Page</h1></Root>);
-    const ViewIncident = () => (<Root><h1>View incidents page</h1></Root>);
     const AuthenticatedRoute = (
       {
         component: ProtectedComponent,
         ...extraProps
-      }
+      },
     ) => (
 
       <Route
@@ -34,13 +33,13 @@ class IReporterApp extends Component {
       {
         component: ProtectedComponent,
         ...extraProps
-      }
+      },
     ) => (
 
       <Route
         {...extraProps}
         render={props => (isAuthenticated() ? (
-          <Redirect to="/viewIncident" />
+          <Redirect to="/createIncident" />
 
         ) : (
           <ProtectedComponent {...props} />
@@ -49,9 +48,9 @@ class IReporterApp extends Component {
         }
       />
     );
-
+    const superHistory = 'pushState' in window.history;
     return (
-      <Router>
+      <Router forceRefresh={superHistory}>
         <Switch>
 
           <OnlyNoneAuthenticatedRoute path="/" exact strict component={Login} />
@@ -63,7 +62,7 @@ class IReporterApp extends Component {
             strict
             component={CreateIncident}
           />
-          <AuthenticatedRoute path="/viewIncident" exact strict component={ViewIncident} />
+          <AuthenticatedRoute path="/:incidentType/:incidentUUID" exact strict component={ViewIncident} />
         </Switch>
       </Router>
 

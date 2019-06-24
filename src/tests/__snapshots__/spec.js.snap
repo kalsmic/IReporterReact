@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<IReporterApp Component should render without crashing 1`] = `
-<BrowserRouter>
+<BrowserRouter
+  forceRefresh={true}
+>
   <Switch>
     <OnlyNoneAuthenticatedRoute
       component={[Function]}
@@ -30,9 +32,17 @@ exports[`<IReporterApp Component should render without crashing 1`] = `
       strict={true}
     />
     <AuthenticatedRoute
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(ViewIncident)",
+          "type": [Function],
+        }
+      }
       exact={true}
-      path="/viewIncident"
+      path="/:incidentType/:incidentUUID"
       strict={true}
     />
   </Switch>

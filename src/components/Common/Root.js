@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import NavBar from '../NavBar';
 import Header from './Header';
+import Footer from './Footer';
 
 class Root extends Component {
   render() {
@@ -11,13 +12,13 @@ class Root extends Component {
     return (
       <div className="wrapper">
         <Header />
-        <NavBar />
-        <div className="wrapper__page-content">
+        <div className="wrapper__menu">
+          <NavBar />
+        </div>
+        <div className="wrapper__page-content border-round-lg">
           {children}
         </div>
-        <div className="wrapper__footer">
-          footer
-        </div>
+        <Footer />
 
       </div>
     );

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIncident Component should render without crushing 1`] = `
+<div
+  className="wrapper__header border-round-lg"
+>
+  <b>
+    Ireporter
+  </b>
+</div>
+`;
+
+exports[`CreateIncident Component should render without crushing 2`] = `
+<div
+  className="wrapper__footer border-round-lg"
+>
+  Ireporter © 2019
+</div>
+`;
+
+exports[`CreateIncident Component should render without crushing 3`] = `
+<div
+  className="wrapper"
+>
+  <Header />
+  <div
+    className="wrapper__menu"
+  >
+    <NavBar />
+  </div>
+  <div
+    className="wrapper__page-content border-round-lg"
+  >
+    divComponent
+  </div>
+  <Footer />
+</div>
+`;

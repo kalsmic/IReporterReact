@@ -7,6 +7,7 @@ import { loginUser } from '../../store/actions/loginActions';
 import Header from '../Common/Header';
 import Footer from '../Common/Footer';
 import './Login.scss';
+import img from '../../img/loader.gif';
 
 
 export class Login extends Component {
@@ -44,12 +45,12 @@ export class Login extends Component {
   render() {
     const { username, password } = this.state;
     const {
-      error, message, isLoggedIn, history,
+      error, message, isLoggedIn, isLoading, history,
     } = this.props;
 
     if (isLoggedIn) {
       setTimeout(() => {
-        history.push('/viewIncident');
+        history.push('/createIncident');
       }, 1000);
     }
     return (
@@ -89,6 +90,8 @@ export class Login extends Component {
               className="wrapper__login_register__form__submit"
             >
               Login
+              {isLoading && <img src={img} alt="loader" data-test="imageLoader" />}
+
             </button>
             <Link to="/signup"> Create an account</Link>
 
@@ -99,16 +102,14 @@ export class Login extends Component {
     );
   }
 }
-Login.defaultProps = {
-  history: () => {},
-};
 
 Login.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
   authenticateUser: PropTypes.func.isRequired,
   error: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
-  history: PropTypes.func,
+  history: PropTypes.shape({}).isRequired,
 };
 
 export const mapStateToProps = (state) => {

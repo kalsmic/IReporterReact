@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import { SignUp, mapStateToProps, mapDispatchToProps } from './index';
+import { mapDispatchToProps, mapStateToProps, SignUp } from './index';
 import { findByTestAttr } from '../../../utils';
 
 describe('Sign up Component', () => {
@@ -46,7 +46,7 @@ describe('Sign up Component', () => {
     wrapper.setState({
       username: '',
       email: '',
-      password: ''
+      password: '',
     });
     const instance = wrapper.instance();
     const event = {
@@ -54,7 +54,7 @@ describe('Sign up Component', () => {
         type: 'submit',
         name: 'login',
       },
-      preventDefault: jest.fn()
+      preventDefault: jest.fn(),
     };
     instance.handleSubmit(event);
     expect(instance.state.username).toBe('');
@@ -63,7 +63,7 @@ describe('Sign up Component', () => {
 
     newUserData.map(([name, value]) => (
       wrapper.setState({
-        [name]: value
+        [name]: value,
       })
     ));
     instance.handleSubmit(event);
@@ -75,12 +75,12 @@ describe('Sign up Component', () => {
     const error = {
       username: 'username Errors',
       email: 'email Error',
-      password: 'password Error'
+      password: 'password Error',
     };
     wrapper.setProps({
       error,
       isLoading: true,
-      message: 'Success message'
+      message: 'Success message',
     });
     expect(findByTestAttr(wrapper, 'usernameError').text()).toBe(error.username);
     expect(findByTestAttr(wrapper, 'emailError').text()).toBe(error.email);
@@ -95,8 +95,8 @@ describe('Sign up Component', () => {
       signUpReducer: {
         message: 'Account created Successfully',
         isLoading: false,
-        error: ''
-      }
+        error: '',
+      },
     };
     const state = mapStateToProps(mockedState);
     expect(state.message).toBe('Account created Successfully');
