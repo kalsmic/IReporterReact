@@ -1,0 +1,48 @@
+.incident__card {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 16px;
+  grid-template-columns: 120px 2fr;
+  justify-content: center;
+  padding: 16px;
+
+  &__title {
+    grid-column: span 1;
+    justify-self: end;
+    font-weight: bold;
+  }
+
+  &__comment {
+    grid-column: span 2;
+
+  }
+
+  & > select {
+    justify-self: start;
+  }
+
+  &__map {
+    grid-column: 2/span 2;
+    justify-self: stretch;
+    padding: 100px;
+  }
+
+  > button {
+    grid-column: span 3;
+    justify-self: end;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .incident__form {
+    > * {
+      grid-column: span 3;
+    }
+
+    &__label {
+      justify-self: start;
+    }
+
+  }
+
+}

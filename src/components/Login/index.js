@@ -49,7 +49,7 @@ export class Login extends Component {
 
     if (isLoggedIn) {
       setTimeout(() => {
-        history.push('/viewIncident');
+        history.push('/createIncident');
       }, 1000);
     }
     return (
@@ -99,16 +99,13 @@ export class Login extends Component {
     );
   }
 }
-Login.defaultProps = {
-  history: () => {},
-};
 
 Login.propTypes = {
   isLoggedIn: PropTypes.bool.isRequired,
   authenticateUser: PropTypes.func.isRequired,
   error: PropTypes.string.isRequired,
   message: PropTypes.string.isRequired,
-  history: PropTypes.func,
+  history: PropTypes.shape({}).isRequired,
 };
 
 export const mapStateToProps = (state) => {

@@ -1,6 +1,4 @@
-import {
-  SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS,
-} from '../../actions/types';
+import { SIGNUP_FAILURE, SIGNUP_REQUEST, SIGNUP_SUCCESS } from '../../actions/types';
 
 export const initialSignUpState = {
   error: {},

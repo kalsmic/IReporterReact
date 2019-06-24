@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIncident Component should render without crushing 1`] = `
+<Root>
+  <h3
+    className="text-blue bd_line_bottom"
+  >
+    New Incident Record
+  </h3>
+  <form
+    className="incident__form"
+    onSubmit={[Function]}
+  >
+    <span
+      className="incident__form__label"
+    >
+      Type of Incident : 
+    </span>
+    <select
+      className="incident__form__input"
+      name="incidentType"
+      onChange={[Function]}
+      required={true}
+      value=""
+    >
+      <option
+        value=""
+      >
+        Please Select Incident type
+      </option>
+      <option
+        value="red-flag"
+      >
+        Red-flag
+      </option>
+      <option
+        value="intervention"
+      >
+        Intervention
+      </option>
+    </select>
+    <span
+      className="incident__form__label"
+    >
+      Title
+    </span>
+    <input
+      className="incident__form__input"
+      name="title"
+      onChange={[Function]}
+      placeholder="What the incident is about ?"
+      required={true}
+      type="text"
+      value="my first tile"
+    />
+    <span
+      className="incident__form__label"
+    >
+      Comment 
+    </span>
+    <textarea
+      className="incident__form__input"
+      maxLength="800"
+      name="comment"
+      onChange={[Function]}
+      placeholder="What happened ?"
+      required={true}
+      value="hahahahaha"
+    />
+    <IncidentMap
+      handleMapClick={[Function]}
+      hasLocation={false}
+      latlng={
+        Object {
+          "lat": 51.505,
+          "lng": -0.09,
+        }
+      }
+      mapClassName="incident__form__map"
+      mapReference={
+        Object {
+          "current": null,
+        }
+      }
+    />
+    <div
+      className="incident__form__footer"
+    >
+      <div
+        className="incident__form__footer__message"
+      />
+      <button
+        className="btn bg-green text-white "
+        type="submit"
+      >
+        Add Incident Record
+         
+      </button>
+    </div>
+  </form>
+</Root>
+`;

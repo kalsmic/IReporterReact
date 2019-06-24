@@ -114,7 +114,7 @@ export class SignUp extends Component {
               name="signup"
               className="wrapper__login_register__form__submit"
             >
-          SIGNUP
+              SIGNUP
             </button>
             <Link to="/"> Click Here to Login</Link>
           </form>

@@ -4,7 +4,7 @@ import { baseURL } from '../../../../utils';
 
 const loginRequest = isLoading => ({
   type: LOGIN_REQUEST,
-  isLoading
+  isLoading,
 
 });
 
@@ -36,10 +36,10 @@ export const loginUser = (username, password) => (dispatch) => {
         const userData = user.data.data[0];
         sessionStorage.setItem('iReporterToken', userData.token);
         dispatch(loginSuccess(userData));
-      }
+      },
     ).catch(
       (error) => {
         dispatch(loginFailure(error.response.data.error));
-      }
+      },
     );
 };

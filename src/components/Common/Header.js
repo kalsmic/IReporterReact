@@ -3,8 +3,8 @@ import React from 'react';
 
 const Header = () => (
 
-  <div className="wrapper__header">
-    Ireporter
+  <div className="wrapper__header border-round-lg">
+    <b>Ireporter</b>
   </div>
 
 );

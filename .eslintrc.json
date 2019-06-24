@@ -31,8 +31,8 @@
     "no-console": 1,
     "no-unexpected-multiline": "warn",
     "import/prefer-default-export": false,
-    "import/no-named-as-default": false
-
+    "import/no-named-as-default": false,
+    "import/no-extraneous-dependencies": false
   },
   "env": {
     "jest": true,

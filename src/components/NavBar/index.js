@@ -1,27 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+const logOut = () => {
+  sessionStorage.removeItem('iReporterToken');
+};
+
 const NavBar = () => (
-  <div className="menu">
-    <ul className="menu_list">
-      <li className="menu_list__item">
-        <NavLink
-          to="/signup"
-          exact
-          activeClassName="menu_"
-        >
-          SignUp
-        </NavLink>
-      </li>
-      <li className="">
-        <NavLink
-          to="/"
-          exact
-          activeClassName="menu_list__item__active"
-        >
-          login
-        </NavLink>
-      </li>
+  <div className="menu border-round-lg">
+    <ul className="menu_list ">
       <li className="menu__list__item">
         <NavLink
           to="/createIncident"
@@ -31,13 +17,14 @@ const NavBar = () => (
           Create Incident
         </NavLink>
       </li>
-      <li className="menu_list__item">
+      <li className="">
         <NavLink
-          to="/viewIncident"
+          to="/"
           exact
           activeClassName="menu_list__item__active"
+          onClick={logOut()}
         >
-          View Incident
+          logout
         </NavLink>
       </li>
     </ul>

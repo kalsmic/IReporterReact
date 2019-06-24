@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIncident Component should render without crushing 1`] = `
+<Root>
+  <h3
+    className="text-blue bd_line_bottom"
+  >
+    View Incident Record Details
+  </h3>
+  <div
+    className="incident__card"
+  />
+  <div
+    className="incident__card-header"
+  >
+    <p
+      className="incident__card-title"
+    >
+      Title:
+      <b />
+    </p>
+    <p>
+      Created On:
+    </p>
+  </div>
+  <p
+    className="incident__card-comment"
+  />
+  <div
+    className="incident__card-map "
+  />
+  <div
+    className="incident__card-footer"
+  >
+    <p
+      className="incident__card-status"
+    />
+    <p>
+       
+      Created by :
+    </p>
+  </div>
+</Root>
+`;
