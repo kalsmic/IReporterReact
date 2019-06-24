@@ -24,7 +24,15 @@ exports[`<IReporterApp Component should render without crashing 1`] = `
       strict={true}
     />
     <AuthenticatedRoute
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(CreateIncident)",
+          "type": [Function],
+        }
+      }
       exact={true}
       path="/createIncident"
       strict={true}

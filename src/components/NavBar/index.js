@@ -2,26 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => (
-  <div className="menu">
-    <ul className="menu_list">
-      <li className="menu_list__item">
-        <NavLink
-          to="/signup"
-          exact
-          activeClassName="menu_"
-        >
-          SignUp
-        </NavLink>
-      </li>
-      <li className="">
-        <NavLink
-          to="/"
-          exact
-          activeClassName="menu_list__item__active"
-        >
-          login
-        </NavLink>
-      </li>
+  <div className="menu border-round-lg">
+    <ul className="menu_list ">
       <li className="menu__list__item">
         <NavLink
           to="/createIncident"
@@ -38,6 +20,15 @@ const NavBar = () => (
           activeClassName="menu_list__item__active"
         >
           View Incident
+        </NavLink>
+      </li>
+      <li className="">
+        <NavLink
+          to="/"
+          exact
+          activeClassName="menu_list__item__active"
+        >
+          logout
         </NavLink>
       </li>
     </ul>

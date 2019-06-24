@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => (
 
-  <div className="wrapper__footer">
+  <div className="wrapper__footer border-round-lg">
     Ireporter @copyright 2019
   </div>
 
