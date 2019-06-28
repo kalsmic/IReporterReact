@@ -1,12 +1,45 @@
-$blue: #68B4D2;
-$orange: #FF6160;
-
 body {
-  background: #23333E;
+  background: #2F4454;
   color: #FFFFFF;
 }
 
-#logo {
+* {box-sizing: border-box;}
 
-  color: $orange;
+.wrapper > * {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.wrapper {
+  height: 100vh;
+
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "header" "menu" "content" "footer";
+  grid-template-rows: 70px 1fr 70px;
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__page-content {
+    grid-area: content;
+  }
+
+  &__footer {
+    grid-area: footer;
+  }
+
+}
+
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: "header header  header" "menu content content" "menu content content" "footer footer  footer";
+  }
 }

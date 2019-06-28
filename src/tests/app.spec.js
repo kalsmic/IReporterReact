@@ -28,7 +28,7 @@ describe('Welcome Header', () => {
         {' '}
         <span id="logo">iReporter</span>
         {' '}
-React
+        React
       </h1>
     );
     expect(wrapper.contains(welcome)).toBe(true);
