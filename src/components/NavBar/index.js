@@ -22,7 +22,7 @@ const NavBar = () => (
           to="/"
           exact
           activeClassName="menu_list__item__active"
-          onClick={logOut()}
+          onClick={(e) => { e.preventDefault(); logOut(); }}
         >
           logout
         </NavLink>

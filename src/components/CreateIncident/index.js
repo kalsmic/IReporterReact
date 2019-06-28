@@ -17,12 +17,12 @@ export class CreateIncident extends Component {
     super(props);
     this.mapRef = React.createRef();
     this.state = {
-      title: 'my first tile',
-      comment: 'hahahahaha',
+      title: '',
+      comment: '',
       incidentLocation: [],
       latlng: {
-        lat: 51.505,
-        lng: -0.09,
+        lat: 0.3428767,
+        lng: 32.5915189,
       },
       hasLocation: false,
       incidentType: '',
