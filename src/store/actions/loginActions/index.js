@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from '../types';
+import { baseURL } from '../../../../utils';
 
 const loginRequest = isLoading => ({
   type: LOGIN_REQUEST,
@@ -20,12 +21,10 @@ const loginFailure = error => ({
   isLoading: false,
 });
 
-const baseURL = 'http://127.0.01:5000/api/v2/';
-
 
 export const loginUser = (username, password) => (dispatch) => {
   dispatch(loginRequest(true));
-  const url = `${baseURL}auth/login`;
+  const url = `${baseURL}/auth/login`;
   const config = {
     headers: { 'Content-Type': 'application/json' },
   };
@@ -34,7 +33,9 @@ export const loginUser = (username, password) => (dispatch) => {
   return axios.post(url, { username, password }, config)
     .then(
       (user) => {
-        dispatch(loginSuccess(user.data.data[0]));
+        const userData = user.data.data[0];
+        sessionStorage.setItem('iReporterToken', userData.token);
+        dispatch(loginSuccess(userData));
       }
     ).catch(
       (error) => {

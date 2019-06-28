@@ -15,7 +15,7 @@ const NavBar = () => (
       </li>
       <li className="">
         <NavLink
-          to="/login"
+          to="/"
           exact
           activeClassName="menu_list__item__active"
         >

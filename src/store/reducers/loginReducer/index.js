@@ -1,11 +1,12 @@
 import {
   LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_USER
 } from '../../actions/types';
+import { isAuthenticated } from '../../../../utils';
 
 export const initialLoginState = {
   user: {},
   error: '',
-  isLoggedIn: false,
+  isLoggedIn: isAuthenticated(),
   isLoading: false,
   message: '',
 };
