@@ -1,7 +1,11 @@
 import axios from 'axios';
 import { authorizationHeader, baseURL } from '../../../../utils';
 import {
-  GET_INCIDENT, GET_INCIDENTS, INCIDENT_ERROR, INCIDENT_REQUEST, INCIDENT_SUCCESS
+  GET_INCIDENT,
+  GET_INCIDENTS,
+  INCIDENT_ERROR,
+  INCIDENT_REQUEST,
+  INCIDENT_SUCCESS
 } from '../types';
 
 const incidentRequest = isLoading => ({
@@ -55,7 +59,8 @@ export const createIncident = (
     .then((response) => {
       const { data: { data: [incidentResponse] } } = response;
       dispatch(incidentSuccess(incidentResponse));
-    }).catch((error) => {
+    })
+    .catch((error) => {
       dispatch(incidentFailure(error.response.data.error));
     });
 };
@@ -75,7 +80,8 @@ export const getIncident = (incidentUUID, incidentType) => (dispatch) => {
       };
 
       dispatch(getOneIncident(incidentResponse));
-    }).catch((error) => {
+    })
+    .catch((error) => {
       dispatch(incidentFailure(error.response.data.error));
     });
 };
@@ -91,7 +97,8 @@ export const getIncidents = incidentType => (dispatch) => {
       const { data: { data } } = response;
 
       dispatch(getManyIncidents(data));
-    }).catch((error) => {
+    })
+    .catch((error) => {
       dispatch(incidentFailure(error.response.data.error));
     });
 };

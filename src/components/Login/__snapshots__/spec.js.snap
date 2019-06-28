@@ -8,8 +8,10 @@ exports[`Login Component should render without crushing 1`] = `
   <div
     className="wrapper__login_register border-round-lg"
   >
-    <h3>
-      Login Here !
+    <h3
+      className="bd_line_bottom text-blue"
+    >
+      Login Here ! 
     </h3>
     <form
       className="wrapper__login_register__form"

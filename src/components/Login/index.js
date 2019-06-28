@@ -7,7 +7,6 @@ import { loginUser } from '../../store/actions/loginActions';
 import Header from '../Common/Header';
 import Footer from '../Common/Footer';
 import './Login.scss';
-import img from '../../img/loader.gif';
 
 
 export class Login extends Component {
@@ -37,10 +36,10 @@ export class Login extends Component {
   };
 
   renderLoginError = error => (
-    error ? <div className="error-msg text-danger">{error}</div> : ''
+    error ? <div className="error-msg">{error}</div> : ''
   );
 
-  renderLoginSuccess = message => (message ? <div className="success-msg text-danger">{message}</div> : '');
+  renderLoginSuccess = message => (message ? <div className="success-msg">{message}</div> : '');
 
   render() {
     const { username, password } = this.state;
@@ -57,7 +56,7 @@ export class Login extends Component {
       <div className="wrapper">
         <Header />
         <div className="wrapper__login_register border-round-lg">
-          <h3>Login Here !</h3>
+          <h3 className="bd_line_bottom text-blue">Login Here ! </h3>
           {this.renderLoginError(error)}
           {this.renderLoginSuccess(message)}
 
@@ -90,7 +89,7 @@ export class Login extends Component {
               className="wrapper__login_register__form__submit"
             >
               Login
-              {isLoading && <img src={img} alt="loader" data-test="imageLoader" />}
+              {isLoading && <i className="fa fa-spinner fa-spin" data-test="imageLoader" />}
 
             </button>
             <Link to="/signup"> Create an account</Link>
@@ -119,7 +118,11 @@ export const mapStateToProps = (state) => {
     },
   } = state;
   return {
-    user, isLoggedIn, isLoading, message, error,
+    user,
+    isLoggedIn,
+    isLoading,
+    message,
+    error,
   };
 };
 

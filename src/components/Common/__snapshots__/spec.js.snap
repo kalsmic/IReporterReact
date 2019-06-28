@@ -24,7 +24,7 @@ exports[`CreateIncident Component should render without crushing 3`] = `
 >
   <Header />
   <div
-    className="wrapper__menu"
+    className="wrapper__menu border-round-lg"
   >
     <NavBar />
   </div>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 
 import { createIncident } from '../../store/actions/incidentActions';
@@ -10,19 +12,18 @@ import IncidentMap from '../Map';
 
 import './CreateIncident.scss';
 import Root from '../Common/Root';
-import img from '../../img/loader.gif';
 
 export class CreateIncident extends Component {
   constructor(props) {
     super(props);
     this.mapRef = React.createRef();
     this.state = {
-      title: 'my first tile',
-      comment: 'hahahahaha',
+      title: '',
+      comment: '',
       incidentLocation: [],
       latlng: {
-        lat: 51.505,
-        lng: -0.09,
+        lat: 0.3428767,
+        lng: 32.5915189,
       },
       hasLocation: false,
       incidentType: '',
@@ -46,12 +47,12 @@ export class CreateIncident extends Component {
     }
   };
 
+
   handleChange = (e) => {
     const { name, value } = e.target;
 
     this.setState({ [name]: value });
   };
-
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -85,6 +86,9 @@ export class CreateIncident extends Component {
     }
   };
 
+  handleChangeComment = (comment) => {
+    this.setState({ comment });
+  };
 
   render() {
     const {
@@ -141,17 +145,15 @@ export class CreateIncident extends Component {
           {titleError && <p data-test="titleError">{titleError}</p>}
 
           <span className="incident__form__label">Comment </span>
-          <textarea
-            className="incident__form__input"
 
-            placeholder="What happened ?"
-            maxLength="800"
-            onChange={this.handleChange}
-            value={comment}
-            name="comment"
-            required
-          />
+          <div className="incident__form__input" id="commentWys">
 
+
+            <ReactQuill
+              value={comment}
+              onChange={this.handleChangeComment}
+            />
+          </div>
           {commentError && <p data-test="commentError">{commentError}</p>}
 
           {locationError && <p data-test="locationError">{locationError}</p>}
@@ -172,8 +174,8 @@ export class CreateIncident extends Component {
             >
               Add Incident Record
               {' '}
-              {isLoading && <img src={img} alt="loader" data-test="imageLoader" />
-              }
+              {isLoading && <i className="fa fa-spinner fa-spin" data-test="imageLoader" />}
+
 
             </button>
 
@@ -207,7 +209,10 @@ export const mapStateToProps = (state) => {
     },
   } = state;
   return {
-    incident, isLoading, message, error,
+    incident,
+    isLoading,
+    message,
+    error,
   };
 };
 

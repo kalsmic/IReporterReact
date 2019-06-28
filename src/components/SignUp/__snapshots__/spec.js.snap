@@ -8,7 +8,9 @@ exports[`Sign up Component should render without crushing 1`] = `
   <div
     className="wrapper__login_register border-round-lg"
   >
-    <h3>
+    <h3
+      className="bd_line_bottom text-blue"
+    >
       Create an account !
     </h3>
     <form
@@ -48,6 +50,7 @@ exports[`Sign up Component should render without crushing 1`] = `
         type="submit"
       >
         SIGNUP
+         
       </button>
       <Link
         replace={false}

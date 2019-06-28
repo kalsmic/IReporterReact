@@ -42,7 +42,8 @@ describe('actions', () => {
 
     return store.dispatch(registerUser())
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -73,7 +74,8 @@ describe('actions', () => {
 
     return store.dispatch(registerUser())
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 });

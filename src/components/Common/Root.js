@@ -12,14 +12,13 @@ class Root extends Component {
     return (
       <div className="wrapper">
         <Header />
-        <div className="wrapper__menu">
+        <div className="wrapper__menu border-round-lg">
           <NavBar />
         </div>
         <div className="wrapper__page-content border-round-lg">
           {children}
         </div>
         <Footer />
-
       </div>
     );
   }

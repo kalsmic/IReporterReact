@@ -23,7 +23,7 @@ exports[`CreateIncident Component should render without crushing 1`] = `
       Created On:
     </p>
   </div>
-  <p
+  <div
     className="incident__card-comment"
   />
   <div

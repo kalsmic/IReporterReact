@@ -14,24 +14,30 @@ body {
   border-radius: 5px;
   padding: 10px;
   margin: 16px;
+  border: 2px solid rgba(207, 231, 246, 0.75);
 
 }
 
 .wrapper {
+  height: 100vh;
   margin: 0 auto;
   display: grid;
   grid-gap: 20px;
   grid-template-areas: "header" "loginRegister" "menu" "content" "footer";
-  grid-template-rows: 6rem 1fr 5rem;
+  grid-template-rows: auto;
   background: linear-gradient(rgba(41, 51, 67, 0.93)) no-repeat;
 
   &__header {
     grid-area: header;
     padding: 10px;
+    height: 4rem;
+
   }
 
   &__menu {
     grid-area: menu;
+    height: fit-content;
+
   }
 
   &__login_register {
@@ -44,14 +50,41 @@ body {
 
   &__footer {
     grid-area: footer;
+    height: 4rem;
   }
 
 }
 
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: "header menu"  "content content" "footer    footer";
+  }
+}
+
 @media (min-width: 700px) {
   .wrapper {
+    grid-gap: unset;
     grid-template-columns: 250px 1fr 1fr;
-    grid-template-areas: "header header  header" ". loginRegister ." "menu content content" "menu content content" "footer footer  footer";
+    grid-template-areas: "header header  header" ". loginRegister ." "menu content content" "footer content content";
+
+    &__header {
+      grid-row: 1;
+    }
+
+    &__menu {
+      grid-row: 2/3;
+    }
+
+    &__page-content {
+      grid-row: 2/3;
+    }
+
+    &__footer {
+      grid-row: 2/3;
+      align-self: end;
+    }
+
   }
 }
 
@@ -67,4 +100,12 @@ body {
 
 .bd_line_bottom {
   border-bottom: solid #EFE4F6 1px;
+}
+
+.success-msg {
+  color: #95D451;
+}
+
+.error-msg {
+  color: #D43C2E;
 }

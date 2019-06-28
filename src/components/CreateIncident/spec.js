@@ -15,7 +15,8 @@ describe('CreateIncident Component', () => {
   const wrapper = shallow(<CreateIncident {...props} />);
 
   it('should render without crushing', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper)
+      .toMatchSnapshot();
   });
 
   it('should handle the onchange event', () => {
@@ -26,13 +27,18 @@ describe('CreateIncident Component', () => {
       },
     };
 
-    wrapper.instance().handleChange(event);
-    expect(wrapper.instance().state.title).toBe(event.target.value);
+    wrapper.instance()
+      .handleChange(event);
+    expect(wrapper.instance().state.title)
+      .toBe(event.target.value);
   });
 
   it('should handle the onSubmit event', () => {
     const instance = wrapper.instance();
-    wrapper.setState({ title: '', comment: '' });
+    wrapper.setState({
+      title: '',
+      comment: ''
+    });
     const event = {
       target: {
         type: 'submit',
@@ -42,7 +48,9 @@ describe('CreateIncident Component', () => {
     };
 
     instance.handleSubmit(event);
-    expect(instance.props.newIncident).not.toBeCalled();
+    expect(instance.props.newIncident)
+      .not
+      .toBeCalled();
     wrapper.setState({
       title: 'Incident Title',
       comment: 'My comment',
@@ -56,22 +64,40 @@ describe('CreateIncident Component', () => {
       incidentType: 'red-flag',
     });
     instance.handleSubmit(event);
-    expect(instance.props.newIncident).toBeCalled();
-    expect(instance.props.newIncident).toBeCalledWith(
-      'Incident Title', 'My comment', [12, 90], 'red-flag',
-    );
+    expect(instance.props.newIncident)
+      .toBeCalled();
+    expect(instance.props.newIncident)
+      .toBeCalledWith(
+        'Incident Title', 'My comment', [12, 90], 'red-flag',
+      );
   });
 
   it('should show messages to the user', () => {
     const error = {
-      title: 'titleError', comment: 'commentError', location: 'locationError',
+      title: 'titleError',
+      comment: 'commentError',
+      location: 'locationError',
     };
-    wrapper.setProps({ error, message: 'incident created Successfully', isLoading: true });
-    expect(findByTestAttr(wrapper, 'titleError').text()).toBe(error.title);
-    expect(findByTestAttr(wrapper, 'commentError').text()).toBe(error.comment);
-    expect(findByTestAttr(wrapper, 'locationError').text()).toBe(error.location);
-    expect(findByTestAttr(wrapper, 'locationError').text()).toBe(error.location);
-    expect(findByTestAttr(wrapper, 'locationError').text()).toBe(error.location);
+    wrapper.setProps({
+      error,
+      message: 'incident created Successfully',
+      isLoading: true
+    });
+    expect(findByTestAttr(wrapper, 'titleError')
+      .text())
+      .toBe(error.title);
+    expect(findByTestAttr(wrapper, 'commentError')
+      .text())
+      .toBe(error.comment);
+    expect(findByTestAttr(wrapper, 'locationError')
+      .text())
+      .toBe(error.location);
+    expect(findByTestAttr(wrapper, 'locationError')
+      .text())
+      .toBe(error.location);
+    expect(findByTestAttr(wrapper, 'locationError')
+      .text())
+      .toBe(error.location);
   });
 
 
@@ -85,15 +111,20 @@ describe('CreateIncident Component', () => {
       },
     };
     const state = mapStateToProps(mockedState);
-    expect(state.message).toBe('Created Successfully');
-    expect(state.isLoading).toBe(false);
-    expect(state.error).toBe('');
+    expect(state.message)
+      .toBe('Created Successfully');
+    expect(state.isLoading)
+      .toBe(false);
+    expect(state.error)
+      .toBe('');
   });
 
   it('should map dispatch to props', () => {
     const mockedDispatch = jest.fn();
 
-    mapDispatchToProps(mockedDispatch).newIncident();
-    expect(mockedDispatch).toHaveBeenCalled();
+    mapDispatchToProps(mockedDispatch)
+      .newIncident();
+    expect(mockedDispatch)
+      .toHaveBeenCalled();
   });
 });

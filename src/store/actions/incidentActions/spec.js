@@ -3,7 +3,11 @@ import configureMockStore from 'redux-mock-store';
 import mockData, { incidentRecord, unauthenticatedResponse } from '../__mocks__/index';
 import { middlewares } from '../../index';
 import {
-  GET_INCIDENT, GET_INCIDENTS, INCIDENT_ERROR, INCIDENT_REQUEST, INCIDENT_SUCCESS
+  GET_INCIDENT,
+  GET_INCIDENTS,
+  INCIDENT_ERROR,
+  INCIDENT_REQUEST,
+  INCIDENT_SUCCESS
 } from '../types';
 import { createIncident, getIncident, getIncidents } from './index';
 
@@ -44,7 +48,8 @@ describe('actions', () => {
 
     return store.dispatch(createIncident('dd', 'dd', 'dd', 'dd', 'dd', 'dd'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -74,7 +79,8 @@ describe('actions', () => {
 
     return store.dispatch(createIncident('dd', 'dd', 'dd', 'dd', 'dd', 'dd'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -105,7 +111,8 @@ describe('actions', () => {
 
     return store.dispatch(createIncident('dd', 'dd', 'dd', 'dd', 'dd', 'dd'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -136,7 +143,8 @@ describe('actions', () => {
 
     return store.dispatch(getIncident('dd', 'red-flag'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -166,7 +174,8 @@ describe('actions', () => {
 
     return store.dispatch(getIncident('dd', 'red-flags'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -196,7 +205,8 @@ describe('actions', () => {
 
     return store.dispatch(getIncidents('red-flags'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 
@@ -226,7 +236,8 @@ describe('actions', () => {
 
     return store.dispatch(getIncidents('red-flags'))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions);
+        expect(store.getActions())
+          .toEqual(expectedActions);
       });
   });
 });

@@ -62,7 +62,12 @@ class IReporterApp extends Component {
             strict
             component={CreateIncident}
           />
-          <AuthenticatedRoute path="/:incidentType/:incidentUUID" exact strict component={ViewIncident} />
+          <AuthenticatedRoute
+            path="/:incidentType/:incidentUUID"
+            exact
+            strict
+            component={ViewIncident}
+          />
         </Switch>
       </Router>
 

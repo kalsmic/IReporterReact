@@ -20,7 +20,8 @@ describe('Sign up Component', () => {
   const wrapper = shallow(<SignUp {...props} />);
 
   it('should render without crushing', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper)
+      .toMatchSnapshot();
   });
 
   it('should handle the onchange event', () => {
@@ -32,13 +33,15 @@ describe('Sign up Component', () => {
         },
       };
 
-      wrapper.instance().handleChange(event);
+      wrapper.instance()
+        .handleChange(event);
     };
 
     // eslint-disable-next-line array-callback-return
     newUserData.map(([name, value]) => {
       mockHandleChange(name, value);
-      expect(wrapper.instance().state[name]).toBe(value);
+      expect(wrapper.instance().state[name])
+        .toBe(value);
     });
   });
 
@@ -57,9 +60,13 @@ describe('Sign up Component', () => {
       preventDefault: jest.fn(),
     };
     instance.handleSubmit(event);
-    expect(instance.state.username).toBe('');
-    expect(instance.state.password).toBe('');
-    expect(instance.props.signUpUser).not.toBeCalled();
+    expect(instance.state.username)
+      .toBe('');
+    expect(instance.state.password)
+      .toBe('');
+    expect(instance.props.signUpUser)
+      .not
+      .toBeCalled();
 
     newUserData.map(([name, value]) => (
       wrapper.setState({
@@ -68,7 +75,8 @@ describe('Sign up Component', () => {
     ));
     instance.handleSubmit(event);
 
-    expect(instance.props.signUpUser).toBeCalled();
+    expect(instance.props.signUpUser)
+      .toBeCalled();
   });
 
   it('should show messages to the user', () => {
@@ -82,11 +90,21 @@ describe('Sign up Component', () => {
       isLoading: true,
       message: 'Success message',
     });
-    expect(findByTestAttr(wrapper, 'usernameError').text()).toBe(error.username);
-    expect(findByTestAttr(wrapper, 'emailError').text()).toBe(error.email);
-    expect(findByTestAttr(wrapper, 'passwordError').text()).toBe(error.password);
-    expect(findByTestAttr(wrapper, 'loader').exists()).toBe(true);
-    expect(findByTestAttr(wrapper, 'message').text()).toBe('Success message');
+    expect(findByTestAttr(wrapper, 'usernameError')
+      .text())
+      .toBe(error.username);
+    expect(findByTestAttr(wrapper, 'emailError')
+      .text())
+      .toBe(error.email);
+    expect(findByTestAttr(wrapper, 'passwordError')
+      .text())
+      .toBe(error.password);
+    expect(findByTestAttr(wrapper, 'imageLoader')
+      .exists())
+      .toBe(true);
+    expect(findByTestAttr(wrapper, 'message')
+      .text())
+      .toBe('Success message');
   });
 
 
@@ -99,15 +117,20 @@ describe('Sign up Component', () => {
       },
     };
     const state = mapStateToProps(mockedState);
-    expect(state.message).toBe('Account created Successfully');
-    expect(state.isLoading).toBe(false);
-    expect(state.error).toBe('');
+    expect(state.message)
+      .toBe('Account created Successfully');
+    expect(state.isLoading)
+      .toBe(false);
+    expect(state.error)
+      .toBe('');
   });
 
   it('should map dispatch to props', () => {
     const mockedDispatch = jest.fn();
 
-    mapDispatchToProps(mockedDispatch).signUpUser();
-    expect(mockedDispatch).toHaveBeenCalled();
+    mapDispatchToProps(mockedDispatch)
+      .signUpUser();
+    expect(mockedDispatch)
+      .toHaveBeenCalled();
   });
 });

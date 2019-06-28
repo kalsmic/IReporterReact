@@ -49,7 +49,8 @@ export const registerUser = (
       (user) => {
         dispatch(registerSuccess(user.data.data[0]));
       },
-    ).catch(
+    )
+    .catch(
       (error) => {
         dispatch(registerFailure(error.response.data.error));
       },

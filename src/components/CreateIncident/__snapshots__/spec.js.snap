@@ -51,29 +51,31 @@ exports[`CreateIncident Component should render without crushing 1`] = `
       placeholder="What the incident is about ?"
       required={true}
       type="text"
-      value="my first tile"
+      value=""
     />
     <span
       className="incident__form__label"
     >
       Comment 
     </span>
-    <textarea
+    <div
       className="incident__form__input"
-      maxLength="800"
-      name="comment"
-      onChange={[Function]}
-      placeholder="What happened ?"
-      required={true}
-      value="hahahahaha"
-    />
+      id="commentWys"
+    >
+      <Quill
+        modules={Object {}}
+        onChange={[Function]}
+        theme="snow"
+        value=""
+      />
+    </div>
     <IncidentMap
       handleMapClick={[Function]}
       hasLocation={false}
       latlng={
         Object {
-          "lat": 51.505,
-          "lng": -0.09,
+          "lat": 0.3428767,
+          "lng": 32.5915189,
         }
       }
       mapClassName="incident__form__map"

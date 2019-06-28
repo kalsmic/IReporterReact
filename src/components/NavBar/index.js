@@ -1,12 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-const logOut = () => {
-  sessionStorage.removeItem('iReporterToken');
-};
+import './NavBar.scss';
 
 const NavBar = () => (
-  <div className="menu border-round-lg">
+  <div className="menu">
     <ul className="menu_list ">
       <li className="menu__list__item">
         <NavLink
@@ -22,7 +19,9 @@ const NavBar = () => (
           to="/"
           exact
           activeClassName="menu_list__item__active"
-          onClick={logOut()}
+          onClick={() => {
+            sessionStorage.removeItem('iReporterToken');
+          }}
         >
           logout
         </NavLink>

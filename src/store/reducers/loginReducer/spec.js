@@ -6,7 +6,8 @@ import {
 
 describe('login Reducer', () => {
   it('should return the initial state', () => {
-    expect(loginReducer(undefined, {})).toStrictEqual(initialLoginState);
+    expect(loginReducer(undefined, {}))
+      .toStrictEqual(initialLoginState);
   });
 
   it('should set loading to true on login request', () => {
@@ -14,13 +15,14 @@ describe('login Reducer', () => {
       type: LOGIN_REQUEST,
       isLoading: true,
 
-    })).toStrictEqual({
-      isLoading: true,
-      error: '',
-      isLoggedIn: false,
-      user: {},
-      message: '',
-    });
+    }))
+      .toStrictEqual({
+        isLoading: true,
+        error: '',
+        isLoggedIn: false,
+        user: {},
+        message: '',
+      });
   });
 
   it('should show login success message', () => {
@@ -44,14 +46,15 @@ describe('login Reducer', () => {
       message,
       token,
 
-    })).toStrictEqual({
-      isLoading: false,
-      isLoggedIn: true,
-      error: '',
-      user,
-      message,
-      token,
-    });
+    }))
+      .toStrictEqual({
+        isLoading: false,
+        isLoggedIn: true,
+        error: '',
+        user,
+        message,
+        token,
+      });
   });
 
   it('should show login failure message', () => {
@@ -61,13 +64,14 @@ describe('login Reducer', () => {
       type: LOGIN_FAILURE,
       error: authError,
 
-    })).toStrictEqual({
-      isLoading: false,
-      isLoggedIn: false,
-      error: authError,
-      user: {},
-      message: '',
-    });
+    }))
+      .toStrictEqual({
+        isLoading: false,
+        isLoggedIn: false,
+        error: authError,
+        user: {},
+        message: '',
+      });
   });
 
   it('should LOGOUT_USER the user', () => {
@@ -75,8 +79,9 @@ describe('login Reducer', () => {
       type: LOGOUT_USER,
 
 
-    })).toStrictEqual({
-      ...initialLoginState,
-    });
+    }))
+      .toStrictEqual({
+        ...initialLoginState,
+      });
   });
 });

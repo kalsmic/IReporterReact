@@ -65,9 +65,8 @@ export class SignUp extends Component {
       <div className="wrapper">
         <Header />
         <div className="wrapper__login_register border-round-lg">
-          <h3>Create an account !</h3>
-          {isLoading && <p data-test="loader">isloading</p>}
-          {message && <p data-test="message">{message}</p>}
+          <h3 className="bd_line_bottom text-blue">Create an account !</h3>
+
 
           <form
             onSubmit={this.handleSubmit}
@@ -84,7 +83,8 @@ export class SignUp extends Component {
               className="wrapper__login_register__form__input"
 
             />
-            {usernameError && <p data-test="usernameError">{usernameError}</p>}
+            {usernameError
+            && <p data-test="usernameError" className="error-msg">{usernameError}</p>}
 
             <input
               type="email"
@@ -96,7 +96,7 @@ export class SignUp extends Component {
               className="wrapper__login_register__form__input"
 
             />
-            {emailError && <p data-test="emailError">{emailError}</p>}
+            {emailError && <p data-test="emailError" className="error-msg">{emailError}</p>}
 
 
             <input
@@ -108,14 +108,21 @@ export class SignUp extends Component {
               required
               className="wrapper__login_register__form__input"
             />
-            {passwordError && <p data-test="passwordError">{passwordError}</p>}
+            {passwordError
+            && <p data-test="passwordError" className="error-msg">{passwordError}</p>}
             <button
               type="submit"
               name="signup"
               className="wrapper__login_register__form__submit"
             >
               SIGNUP
+              {' '}
+              {isLoading && <i className="fa fa-spinner fa-spin" data-test="imageLoader" />}
+
+
             </button>
+            {message && <p data-test="message">{message}</p>}
+
             <Link to="/"> Click Here to Login</Link>
           </form>
         </div>
@@ -144,7 +151,9 @@ export const mapStateToProps = (state) => {
     },
   } = state;
   return {
-    isLoading, message, error,
+    isLoading,
+    message,
+    error,
   };
 };
 

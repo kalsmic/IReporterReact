@@ -14,6 +14,14 @@
   &__input {
     grid-column: span 2;
 
+    &#commentWys {
+      background: #CFE7F6;
+      color: rgba(0, 0, 0, 0.75);
+      min-height: 15vh;
+      font-weight: lighter;
+
+    }
+
   }
 
   & > select {
@@ -58,3 +66,8 @@
   }
 
 }
+//
+//#commentWys {
+//  background: #CFE7F6;
+//
+//}

@@ -12,12 +12,16 @@ describe('CreateIncident Component', () => {
 
 
   it('should render without crushing', () => {
-    expect(header).toMatchSnapshot();
-    expect(footer).toMatchSnapshot();
-    expect(root).toMatchSnapshot();
+    expect(header)
+      .toMatchSnapshot();
+    expect(footer)
+      .toMatchSnapshot();
+    expect(root)
+      .toMatchSnapshot();
   });
 
   it('should wrap its children', () => {
-    expect(root.text()).toBe('<Header /><NavBar />divComponent<Footer />');
+    expect(root.text())
+      .toBe('<Header /><NavBar />divComponent<Footer />');
   });
 });

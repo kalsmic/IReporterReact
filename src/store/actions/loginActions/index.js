@@ -30,14 +30,18 @@ export const loginUser = (username, password) => (dispatch) => {
   };
 
 
-  return axios.post(url, { username, password }, config)
+  return axios.post(url, {
+    username,
+    password
+  }, config)
     .then(
       (user) => {
         const userData = user.data.data[0];
         sessionStorage.setItem('iReporterToken', userData.token);
         dispatch(loginSuccess(userData));
       },
-    ).catch(
+    )
+    .catch(
       (error) => {
         dispatch(loginFailure(error.response.data.error));
       },

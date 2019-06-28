@@ -7,6 +7,7 @@ describe('<IReporterApp Component', () => {
   const component = shallow(<IReporterApp />);
 
   it('should render without crashing', () => {
-    expect(component).toMatchSnapshot();
+    expect(component)
+      .toMatchSnapshot();
   });
 });

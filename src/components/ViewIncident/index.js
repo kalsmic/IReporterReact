@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import renderHTML from 'react-render-html';
+
 
 import { getIncident } from '../../store/actions/incidentActions';
 import './style.scss';
@@ -52,7 +54,7 @@ export class ViewIncident extends Component {
           </p>
 
         </div>
-        <p className="incident__card-comment">{comment}</p>
+        <div className="incident__card-comment">{comment && renderHTML(comment)}</div>
 
         <div className="incident__card-map ">
           {myLocation && (
@@ -111,7 +113,9 @@ export const mapStateToProps = (state) => {
     },
   } = state;
   return {
-    incident, message, error,
+    incident,
+    message,
+    error,
   };
 };
 

@@ -1,4 +1,4 @@
-import createHistory from 'history/createBrowserHistory';
+const createHistory = require('history').createBrowserHistory;
 
 export const findByTestAttr = (component, attr) => {
   const wrapper = component.find(`[data-test='${attr}']`);

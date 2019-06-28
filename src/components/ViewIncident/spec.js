@@ -13,7 +13,8 @@ describe('CreateIncident Component', () => {
   const wrapper = shallow(<ViewIncident {...props} />);
 
   it('should render without crushing', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper)
+      .toMatchSnapshot();
   });
 
   it('should map state to props', () => {
@@ -25,14 +26,18 @@ describe('CreateIncident Component', () => {
       },
     };
     const state = mapStateToProps(mockedState);
-    expect(state.message).toBe('Created Successfully');
-    expect(state.error).toBe('');
+    expect(state.message)
+      .toBe('Created Successfully');
+    expect(state.error)
+      .toBe('');
   });
 
   it('should map dispatch to props', () => {
     const mockedDispatch = jest.fn();
 
-    mapDispatchToProps(mockedDispatch).viewIncident();
-    expect(mockedDispatch).toHaveBeenCalled();
+    mapDispatchToProps(mockedDispatch)
+      .viewIncident();
+    expect(mockedDispatch)
+      .toHaveBeenCalled();
   });
 });
