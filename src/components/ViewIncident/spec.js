@@ -9,12 +9,59 @@ describe('CreateIncident Component', () => {
     error: '',
     message: '',
     incident: {},
+    match: {
+      params: {
+        incidentType: 'red-flag',
+        incidentUUID: 'incidentUUID'
+      }
+    }
   };
   const wrapper = shallow(<ViewIncident {...props} />);
 
   it('should render without crushing', () => {
     expect(wrapper)
       .toMatchSnapshot();
+  });
+
+  it('should call view incidents on ComponentDidMount', async () => {
+    await wrapper.instance().componentDidMount();
+    expect(viewIncidentFn).toBeCalled();
+    expect(viewIncidentFn).toBeCalledTimes(1);
+  });
+
+  it('should show incident record details', () => {
+    const incident = {
+      title: 'incident Title',
+      owner: 'owners name',
+      createdBy: 'data',
+      created_on: 'Sat, 29 Jun 2019 00:00:00 GMT',
+      status: 'draft',
+      comment: 'my comment',
+      location: {
+        lat: 23,
+        lng: 93
+      },
+    };
+    wrapper.setProps({ incident });
+    expect(
+      wrapper.find('.incident__card__header__title').text()
+    ).toBe(incident.title);
+
+    expect(
+      wrapper.find('.incident__card__header__created_on').text()
+    ).toBe('Created On: Sat Jun 29 2019 03:00:00 ');
+
+    expect(
+      wrapper.find('.incident__card-comment').text()
+    ).toBe(incident.comment);
+
+    expect(
+      wrapper.find('.incident__card-status').text()
+    ).toBe('status:  draft');
+
+    expect(
+      wrapper.find('.incident__card-owner').text()
+    ).toBe('Created by : owners name');
   });
 
   it('should map state to props', () => {

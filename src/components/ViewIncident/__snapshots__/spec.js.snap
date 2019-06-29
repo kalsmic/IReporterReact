@@ -39,7 +39,9 @@ exports[`CreateIncident Component should render without crushing 1`] = `
        
        
     </span>
-    <span>
+    <span
+      className="incident__card-owner"
+    >
       Created by :
        
     </span>

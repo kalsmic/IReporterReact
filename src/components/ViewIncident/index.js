@@ -75,7 +75,7 @@ export class ViewIncident extends Component {
             {' '}
             {status}
           </span>
-          <span>
+          <span className="incident__card-owner">
             Created by :
             {' '}
             {createdBy && createdBy}
