@@ -1,6 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 import { mapDispatchToProps, mapStateToProps, ViewIncident } from './index';
+import { formatDate } from '../../../utils';
 
 describe('CreateIncident Component', () => {
   const viewIncidentFn = jest.fn();
@@ -49,7 +50,7 @@ describe('CreateIncident Component', () => {
 
     expect(
       wrapper.find('.incident__card__header__created_on').text()
-    ).toBe('Created On: Sat Jun 29 2019 03:00:00 ');
+    ).toBe('Created On: '.concat(formatDate('Sat, 29 Jun 2019 00:00:00 GMT')));
 
     expect(
       wrapper.find('.incident__card-comment').text()

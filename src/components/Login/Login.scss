@@ -1,38 +1,81 @@
-.wrapper__login_register__form {
+.wrapper__login_register {
   display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  padding: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 
-  &__input {
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #888875;
-    margin: 1rem;
-    padding-top: 1.1875rem;
-  }
-
-  &__submit {
-    justify-self: center;
-    margin: 1.1875rem;
+  &__form {
+    grid-column: 2/span 1;
+    grid-row: 2;
+    min-width: 250px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    border-bottom: solid #EFE4F6 1px;
+    border-left: solid rgba(239, 228, 246, 0.28) 1px;
+    border-right: solid rgba(239, 228, 246, 0.28) 1px;
+    border-top: solid #EFE4F6 1px;
+    width: 30vw;
 
     &:hover {
-      background-color: rgba(68, 102, 10, 0.73);
-      color: #FFF;
-      cursor: pointer;
+      border: solid #EFE4F6 1px;
+    }
+
+    &__input {
+      background: transparentize(#266DA6,.4);
+      border: 0;
+      border-bottom: 1px solid #FFFFFF;
+      font-size: 18px;
+      margin: 1rem;
+      padding-top: 1.1875rem;
+      color: #FFFFFF;
+
+      &::placeholder {
+        color: #FFFFFF;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid #ADAD9A;
+      }
+    }
+
+    &__submit {
+      justify-self: center;
+      margin: 1.1875rem;
+
+      &:hover {
+        background-color: rgba(68, 102, 10, 0.73);
+        color: #FFF;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      color: #03FFF4;
+      justify-self: center;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      &:hover {
+        color: transparentize(#03FFF4, .3);
+        cursor: pointer;
+        font-weight: bolder;
+      }
+    }
+
+    > .wrapper__header {
+      text-align: center;
+      background: radial-gradient(#5DD8FF, transparent);
+      color: #FFFFFF;
+    }
+
+    > .wrapper__footer {
+      margin-top: 10px;
+      text-align: center;
+      background: radial-gradient(#5DD8FF, transparent);
 
     }
   }
-
-  a {
-    color: #006;
-    justify-self: center;
-
-    &:hover {
-      color: rgba(0, 0, 102, 0.73);
-      cursor: pointer;
-
-    }
-  }
-
 }

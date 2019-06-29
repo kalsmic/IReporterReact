@@ -1,10 +1,22 @@
+$blue:#29648A;
+$purple: rgba(120, 168, 211, 0.87);
+$lightBlue: #5DD8FF;
+
+$pageBackground: #242582;
+$headerBackground: transparentize($lightBlue,0.3);
+$menuBackground: transparentize($lightBlue, .5);
+$pgContentBackground: transparentize($blue, .5);
+$footerBackground: transparentize($lightBlue, .5);
+
+html {
+  height: 100%;
+  background: radial-gradient(#0D8DDE, #272727);
+
+}
+
 body {
   color: #FFF;
-  height: 600px;
   width: 100%;
-  background: radial-gradient(#387989, #2F4454);
-  //background-repeat: no-repeat;
-
 }
 
 * {
@@ -12,7 +24,6 @@ body {
 }
 
 .wrapper > * {
-  border: 2px solid rgba(207, 231, 246, 0.75);
   border-radius: 5px;
   margin: 16px;
   padding: 10px;
@@ -21,46 +32,49 @@ body {
 
 .wrapper {
   display: grid;
-  grid-gap: 20px;
+  grid-gap-row: 20px;
+  grid-column-gap: 10px;
   grid-template-areas: "header" "loginRegister" "menu" "content" "footer";
   grid-template-rows: auto;
-  height: 100vh;
   margin: 0 auto;
-  //background: linear-gradient(rgba(41, 51, 67, 0.93)) no-repeat;
+  height: 100%;
 
   &__header {
-    //background-color: #216583;
     grid-area: header;
     height: 4rem;
     padding: 10px;
-    box-shadow: inset 10px 10px 39px #293343;
-
+    color: #FFFFFF;
+    background: radial-gradient($headerBackground, transparent);
   }
 
   &__menu {
     grid-area: menu;
     height: fit-content;
-    background: linear-gradient(top,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%);
+    background: radial-gradient($menuBackground, transparent);
   }
 
   &__login_register {
     grid-area: loginRegister;
+    border: none;
+
   }
 
   &__page-content {
     grid-area: content;
+    background-color: hsla(39, 77%, 83%, 0.3);
   }
 
   &__footer {
     grid-area: footer;
     height: 4rem;
-  }
+    background: radial-gradient($footerBackground, transparent);
+    color: #FFFFFF;}
 
 }
 
 @media (min-width: 500px) {
   .wrapper {
-    grid-template-areas: "header menu"  "content content" "footer    footer";
+    grid-template-areas: "header menu" 'loginRegister loginRegister'  "content content" "footer    footer";
     grid-template-columns: 250px 1fr;
   }
 }
@@ -68,7 +82,7 @@ body {
 @media (min-width: 700px) {
   .wrapper {
     grid-gap: unset;
-    grid-template-areas: "header header  header" ". loginRegister ." "menu content content" "footer content content";
+    grid-template-areas: "header header  header" "loginRegister loginRegister loginRegister " "menu content content" "footer content content";
     grid-template-columns: 250px 1fr 1fr;
 
     &__header {
@@ -92,13 +106,13 @@ body {
 }
 
 .border-round-lg {
-  //background: rgba(67, 91, 106, 0.71);
   border-radius: 32px;
   padding: 20px;
 }
 
 .text-blue {
   color: #BFD8EE;
+  text-align: center;
 
 }
 
@@ -111,7 +125,9 @@ body {
 }
 
 .error-msg {
-  color: #D43C2E;
+  color: #E53A33;
+  background: radial-gradient(#4BABD4, transparent);
+  padding: 10px;
 }
 
 .btn {
@@ -128,8 +144,8 @@ body {
   letter-spacing: 2px;
 
   &:hover {
-    background-color: #FFFFFF;
-    color: #2E3B4C;
-    border: 3px solid #2E3B4C;
+    background: transparent;
+    color: #6E99BF;
+    border: 3px solid #6E99BF;
   }
 }

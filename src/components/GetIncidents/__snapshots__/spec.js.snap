@@ -5,7 +5,8 @@ exports[`CreateIncident Component should render without crushing 1`] = `
   <h3
     className="text-blue bd_line_bottom"
   >
-    Incidents
+    RedFlag 
+    Records
   </h3>
   <ul
     className="incidents"

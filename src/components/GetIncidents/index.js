@@ -24,7 +24,7 @@ export class GetIncidents extends Component {
   }
 
   render() {
-    const { isLoading, incidents } = this.props;
+    const { isLoading, incidents, match: { params: { incidentType } } } = this.props;
 
 
     const incidentsRecords = incidents.map(incident => (
@@ -39,10 +39,14 @@ export class GetIncidents extends Component {
       </li>
     ));
 
+    const title = incidentType === 'red-flags' ? 'RedFlag ' : 'Intervention ';
 
     return (
       <Root>
-        <h3 className="text-blue bd_line_bottom">Incidents</h3>
+        <h3 className="text-blue bd_line_bottom">
+          {title}
+Records
+        </h3>
         {isLoading && (
           <div><i className="fa fa-3x fa-spinner fa-spin" data-test="imageLoader" /></div>)}
 
@@ -50,6 +54,11 @@ export class GetIncidents extends Component {
 
 
           {incidentsRecords}
+          {incidents.length === 0 && (
+            <div>
+              <p>No records are available</p>
+            </div>
+          )}
         </ul>
 
       </Root>
@@ -64,10 +73,10 @@ GetIncidents.propTypes = {
       id: PropTypes.string,
       title: PropTypes.string,
       comment: PropTypes.string,
-      location: PropTypes.shape({
-        lat: PropTypes.number,
-        lng: PropTypes.number,
-      }),
+      // location: PropTypes.shape({
+      //   lat: PropTypes.number,
+      //   lng: PropTypes.number,
+      // }),
       created_by: PropTypes.string,
       created_on: PropTypes.string,
       type: PropTypes.string,

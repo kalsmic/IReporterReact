@@ -1,7 +1,7 @@
 .incident__form {
   display: grid;
   grid-auto-rows: auto;
-  grid-gap: 16px;
+  grid-gap: 32px;
   grid-template-columns: 120px 2fr;
   justify-content: center;
   padding: 16px;
@@ -19,7 +19,7 @@
     &#commentWys {
       color: rgba(0, 0, 0, 0.75);
       font-weight: lighter;
-      min-height: 15vh;
+      min-height: 25vh;
       width: 100%;
     }
 
@@ -32,7 +32,7 @@
   &__map {
     grid-column: 2/span 2;
     justify-self: stretch;
-    padding: 100px;
+    height: 30vh;
   }
 
   &__footer {

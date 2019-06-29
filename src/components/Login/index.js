@@ -54,16 +54,16 @@ export class Login extends Component {
     }
     return (
       <div className="wrapper">
-        <Header />
-        <div className="wrapper__login_register border-round-lg">
-          <h3 className="bd_line_bottom text-blue">Login Here ! </h3>
-          {this.renderLoginError(error)}
-          {this.renderLoginSuccess(message)}
-
+        <div className="wrapper__login_register">
           <form
             onSubmit={this.handleSubmit}
-            className="wrapper__login_register__form"
+            className="wrapper__login_register__form border-round-lg"
           >
+            <Header />
+            <h3 className="bd_line_bottom text-blue">Login Here ! </h3>
+            {this.renderLoginError(error)}
+            {this.renderLoginSuccess(message)}
+
             <input
               type="text"
               name="username"
@@ -86,17 +86,24 @@ export class Login extends Component {
             <button
               type="submit"
               name="login"
-              className="wrapper__login_register__form__submit"
+              className="wrapper__login_register__form__submit btn"
             >
-              Login
+              <i className="fa fa-sign-in-alt" aria-hidden="true">
+                {' '}
+                Login
+              </i>
               {isLoading && <i className="fa fa-spinner fa-spin" data-test="imageLoader" />}
 
             </button>
-            <Link to="/signup"> Create an account</Link>
+            <Link to="/signup">
+              {' '}
+              <i className="fa fa-user-plus"> Create an account</i>
+            </Link>
+            <Footer />
 
           </form>
         </div>
-        <Footer />
+
       </div>
     );
   }

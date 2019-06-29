@@ -4,19 +4,19 @@ exports[`Sign up Component should render without crushing 1`] = `
 <div
   className="wrapper"
 >
-  <Header />
   <div
-    className="wrapper__login_register border-round-lg"
+    className="wrapper__login_register "
   >
-    <h3
-      className="bd_line_bottom text-blue"
-    >
-      Create an account !
-    </h3>
     <form
-      className="wrapper__login_register__form"
+      className="wrapper__login_register__form border-round-lg"
       onSubmit={[Function]}
     >
+      <Header />
+      <h3
+        className="bd_line_bottom text-blue"
+      >
+        Create an account !
+      </h3>
       <input
         className="wrapper__login_register__form__input"
         name="username"
@@ -45,7 +45,7 @@ exports[`Sign up Component should render without crushing 1`] = `
         value=""
       />
       <button
-        className="wrapper__login_register__form__submit"
+        className="wrapper__login_register__form__submit btn"
         name="signup"
         type="submit"
       >
@@ -58,8 +58,8 @@ exports[`Sign up Component should render without crushing 1`] = `
       >
          Click Here to Login
       </Link>
+      <Footer />
     </form>
   </div>
-  <Footer />
 </div>
 `;

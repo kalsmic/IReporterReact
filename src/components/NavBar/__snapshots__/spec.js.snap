@@ -5,46 +5,13 @@ exports[`NavBar should render without crashing 1`] = `
   className="menu"
 >
   <ul
-    className="menu_list "
+    className="menu__list "
   >
-    <li
-      className="menu__list__item"
-    >
+    <li>
       <NavLink
-        activeClassName="menu_list__item__active"
+        activeClassName="menu__list__item__active"
         aria-current="page"
-        exact={true}
-        to="/red-flags"
-      >
-        <i
-          className="fa fa-flag"
-        />
-         
-        Redflags
-      </NavLink>
-    </li>
-    <li
-      className="menu__list__item"
-    >
-      <NavLink
-        activeClassName="menu_list__item__active"
-        aria-current="page"
-        exact={true}
-        to="/interventions"
-      >
-        <i
-          className="fa fa-drafting-compass"
-        />
-         
-        Interventions
-      </NavLink>
-    </li>
-    <li
-      className="menu__list__item"
-    >
-      <NavLink
-        activeClassName="menu_list__item__active"
-        aria-current="page"
+        className="menu__list__item"
         exact={true}
         to="/createIncident"
       >
@@ -55,19 +22,48 @@ exports[`NavBar should render without crashing 1`] = `
         Create Incident
       </NavLink>
     </li>
-    <li
-      className="menu__list__item"
-    >
+    <li>
       <NavLink
-        activeClassName="menu_list__item__active"
+        activeClassName="menu__list__item__active"
         aria-current="page"
+        className="menu__list__item"
+        exact={true}
+        to="/red-flags"
+      >
+        <i
+          className="fa fa-flag"
+        />
+         
+        Redflags
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        activeClassName="menu__list__item__active"
+        aria-current="page"
+        className="menu__list__item"
+        exact={true}
+        to="/interventions"
+      >
+        <i
+          className="fa fa-drafting-compass"
+        />
+         
+        Interventions
+      </NavLink>
+    </li>
+    <li>
+      <NavLink
+        activeClassName="menu__list__item__active"
+        aria-current="page"
+        className="menu__list__item"
         data-test="logout"
         exact={true}
         onClick={[Function]}
         to="/"
       >
         <i
-          className="fa fa-lock"
+          className="fa fa-unlock"
         />
          
         logout

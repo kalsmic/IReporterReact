@@ -15,6 +15,5 @@ describe('NavBar', () => {
     const logoutLink = findByTestAttr(component, 'logout');
     const logoutfn = jest.fn();
     logoutLink.simulate('click');
-    console.log(component.debug());
   });
 });

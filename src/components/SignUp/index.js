@@ -63,15 +63,16 @@ export class SignUp extends Component {
     const { password: passwordError, username: usernameError, email: emailError } = error;
     return (
       <div className="wrapper">
-        <Header />
-        <div className="wrapper__login_register border-round-lg">
-          <h3 className="bd_line_bottom text-blue">Create an account !</h3>
+        <div className="wrapper__login_register ">
 
 
           <form
             onSubmit={this.handleSubmit}
-            className="wrapper__login_register__form"
+            className="wrapper__login_register__form border-round-lg"
           >
+            <Header />
+            <h3 className="bd_line_bottom text-blue">Create an account !</h3>
+
 
             <input
               type="text"
@@ -113,7 +114,7 @@ export class SignUp extends Component {
             <button
               type="submit"
               name="signup"
-              className="wrapper__login_register__form__submit"
+              className="wrapper__login_register__form__submit btn"
             >
               SIGNUP
               {' '}
@@ -124,9 +125,10 @@ export class SignUp extends Component {
             {message && <p data-test="message">{message}</p>}
 
             <Link to="/"> Click Here to Login</Link>
+            <Footer />
+
           </form>
         </div>
-        <Footer />
       </div>
     );
   }
