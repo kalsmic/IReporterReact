@@ -37,6 +37,20 @@ exports[`<IReporterApp Component should render without crashing 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
+          "displayName": "Connect(GetIncidents)",
+          "type": [Function],
+        }
+      }
+      exact={true}
+      path="/:incidentType"
+      strict={true}
+    />
+    <AuthenticatedRoute
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
           "displayName": "Connect(ViewIncident)",
           "type": [Function],
         }

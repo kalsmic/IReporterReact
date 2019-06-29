@@ -1,0 +1,36 @@
+.incidents {
+  display: grid;
+  grid-gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill,minmax(12.5rem, 1fr));
+  list-style: none;
+  margin: 2rem;
+
+  &__item {
+    border: 1px solid #91A0FF;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      background-color: #79A5F0;
+      color: #FFF;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    &__body {
+      padding: 10px;
+
+    }
+
+    &__footer {
+      border-top: 1px solid rgba(108, 123, 214, 0.51);
+      margin-top: auto;
+
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+}

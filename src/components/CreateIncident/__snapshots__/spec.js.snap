@@ -58,17 +58,14 @@ exports[`CreateIncident Component should render without crushing 1`] = `
     >
       Comment 
     </span>
-    <div
+    <Quill
       className="incident__form__input"
       id="commentWys"
-    >
-      <Quill
-        modules={Object {}}
-        onChange={[Function]}
-        theme="snow"
-        value=""
-      />
-    </div>
+      modules={Object {}}
+      onChange={[Function]}
+      theme="snow"
+      value=""
+    />
     <IncidentMap
       handleMapClick={[Function]}
       hasLocation={false}

@@ -145,15 +145,12 @@ export class CreateIncident extends Component {
           {titleError && <p data-test="titleError">{titleError}</p>}
 
           <span className="incident__form__label">Comment </span>
-
-          <div className="incident__form__input" id="commentWys">
-
-
-            <ReactQuill
-              value={comment}
-              onChange={this.handleChangeComment}
-            />
-          </div>
+          <ReactQuill
+            id="commentWys"
+            className="incident__form__input"
+            value={comment}
+            onChange={this.handleChangeComment}
+          />
           {commentError && <p data-test="commentError">{commentError}</p>}
 
           {locationError && <p data-test="locationError">{locationError}</p>}

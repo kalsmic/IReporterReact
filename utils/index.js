@@ -22,3 +22,5 @@ export const authorizationHeader = {
 
 
 export const history = createHistory();
+
+export const formatDate = timestamp => (new Date(timestamp).toString().slice(0, 25));

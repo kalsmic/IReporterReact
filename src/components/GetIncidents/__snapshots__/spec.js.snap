@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIncident Component should render without crushing 1`] = `
+<Root>
+  <h3
+    className="text-blue bd_line_bottom"
+  >
+    Incidents
+  </h3>
+  <ul
+    className="incidents"
+  >
+    <li
+      className="incidents__item"
+      key="c876cadf-a673-4507-944a-a9260294c5c8"
+    >
+      <h2
+        className="incidents__item__title"
+      >
+        Fewer criminals being caught after 28% drop in detective numbers
+      </h2>
+      <div
+        className="incidents__item__body"
+      >
+        <p
+          key="0"
+        >
+          <strong
+            key="0"
+            style={
+              Object {
+                "color": "rgb(0, 0, 0)",
+              }
+            }
+          >
+            <em
+              key="0"
+            >
+              <u
+                key="0"
+              >
+                There were 610 fewer detectives serving in major crime and murder squads in the year to March 2019 compared with 2010
+              </u>
+            </em>
+          </strong>
+        </p>
+        <p
+          key="1"
+        >
+          People have an increasing chance of getting away with murder as figures show the number of detectives investigating the most serious offences in England and Wales has fallen by more than a quarter since austerity began.
+        </p>
+        <p
+          key="2"
+        >
+          Data obtained under freedom of information requests showed the number of detectives serving in major crime and murder squads had fallen by at least 610, or 28%, between 2010-11 and 2017-18.
+        </p>
+      </div>
+      <div
+        className="incidents__item__footer"
+      >
+        <Link
+          replace={false}
+          to="/red-flag/c876cadf-a673-4507-944a-a9260294c5c8"
+        >
+          View details!
+        </Link>
+      </div>
+    </li>
+  </ul>
+</Root>
+`;

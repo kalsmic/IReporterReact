@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should render without crashing 1`] = `
+<div
+  className="menu"
+>
+  <ul
+    className="menu_list "
+  >
+    <li
+      className="menu__list__item"
+    >
+      <NavLink
+        activeClassName="menu_list__item__active"
+        aria-current="page"
+        exact={true}
+        to="/red-flags"
+      >
+        <i
+          className="fa fa-flag"
+        />
+         
+        Redflags
+      </NavLink>
+    </li>
+    <li
+      className="menu__list__item"
+    >
+      <NavLink
+        activeClassName="menu_list__item__active"
+        aria-current="page"
+        exact={true}
+        to="/interventions"
+      >
+        <i
+          className="fa fa-drafting-compass"
+        />
+         
+        Interventions
+      </NavLink>
+    </li>
+    <li
+      className="menu__list__item"
+    >
+      <NavLink
+        activeClassName="menu_list__item__active"
+        aria-current="page"
+        exact={true}
+        to="/createIncident"
+      >
+        <i
+          className="fa fa-plus"
+        />
+         
+        Create Incident
+      </NavLink>
+    </li>
+    <li
+      className="menu__list__item"
+    >
+      <NavLink
+        activeClassName="menu_list__item__active"
+        aria-current="page"
+        data-test="logout"
+        exact={true}
+        onClick={[Function]}
+        to="/"
+      >
+        <i
+          className="fa fa-lock"
+        />
+         
+        logout
+      </NavLink>
+    </li>
+  </ul>
+</div>
+`;

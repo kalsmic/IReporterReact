@@ -13,13 +13,14 @@
 
   &__input {
     grid-column: span 2;
+    padding: 16px;
+    outline: none;
 
     &#commentWys {
-      background: #CFE7F6;
       color: rgba(0, 0, 0, 0.75);
-      min-height: 15vh;
       font-weight: lighter;
-
+      min-height: 15vh;
+      width: 100%;
     }
 
   }
@@ -35,14 +36,14 @@
   }
 
   &__footer {
-    grid-column: span 3;
     display: grid;
+    grid-column: span 3;
     grid-template-areas: ' . message' 'actions';
 
     &__message {
+      color: #95D451;
       grid-area: message;
       justify-content: center;
-      color: #95D451;
     }
 
     > button {
@@ -66,8 +67,3 @@
   }
 
 }
-//
-//#commentWys {
-//  background: #CFE7F6;
-//
-//}

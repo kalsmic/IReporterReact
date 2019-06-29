@@ -11,17 +11,17 @@ exports[`CreateIncident Component should render without crushing 1`] = `
     className="incident__card"
   />
   <div
-    className="incident__card-header"
+    className="incident__card__header"
   >
-    <p
-      className="incident__card-title"
+    <h1
+      className="incident__card__header__title"
+    />
+    <span
+      className="incident__card__header__created_on"
     >
-      Title:
-      <b />
-    </p>
-    <p>
       Created On:
-    </p>
+       
+    </span>
   </div>
   <div
     className="incident__card-comment"
@@ -30,15 +30,19 @@ exports[`CreateIncident Component should render without crushing 1`] = `
     className="incident__card-map "
   />
   <div
-    className="incident__card-footer"
+    className="incident__card__footer"
   >
-    <p
+    <span
       className="incident__card-status"
-    />
-    <p>
+    >
+      status:
        
+       
+    </span>
+    <span>
       Created by :
-    </p>
+       
+    </span>
   </div>
 </Root>
 `;

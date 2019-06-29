@@ -8,8 +8,8 @@
     background: transparent;
     border: 0;
     border-bottom: 1px solid #888875;
-    padding-top: 1.1875rem;
     margin: 1rem;
+    padding-top: 1.1875rem;
   }
 
   &__submit {
@@ -17,20 +17,20 @@
     margin: 1.1875rem;
 
     &:hover {
-      cursor: pointer;
       background-color: rgba(68, 102, 10, 0.73);
-      color: #FFFFFF;
+      color: #FFF;
+      cursor: pointer;
 
     }
   }
 
   a {
+    color: #006;
     justify-self: center;
-    color: #000066;
 
     &:hover {
-      cursor: pointer;
       color: rgba(0, 0, 102, 0.73);
+      cursor: pointer;
 
     }
   }

@@ -1,8 +1,9 @@
 body {
-  background: #2F4454;
-  color: #FFFFFF;
-  width: 100%;
+  color: #FFF;
   height: 600px;
+  width: 100%;
+  background: radial-gradient(#387989, #2F4454);
+  //background-repeat: no-repeat;
 
 }
 
@@ -11,33 +12,35 @@ body {
 }
 
 .wrapper > * {
-  border-radius: 5px;
-  padding: 10px;
-  margin: 16px;
   border: 2px solid rgba(207, 231, 246, 0.75);
+  border-radius: 5px;
+  margin: 16px;
+  padding: 10px;
 
 }
 
 .wrapper {
-  height: 100vh;
-  margin: 0 auto;
   display: grid;
   grid-gap: 20px;
   grid-template-areas: "header" "loginRegister" "menu" "content" "footer";
   grid-template-rows: auto;
-  background: linear-gradient(rgba(41, 51, 67, 0.93)) no-repeat;
+  height: 100vh;
+  margin: 0 auto;
+  //background: linear-gradient(rgba(41, 51, 67, 0.93)) no-repeat;
 
   &__header {
+    //background-color: #216583;
     grid-area: header;
-    padding: 10px;
     height: 4rem;
+    padding: 10px;
+    box-shadow: inset 10px 10px 39px #293343;
 
   }
 
   &__menu {
     grid-area: menu;
     height: fit-content;
-
+    background: linear-gradient(top,  rgba(96,108,136,1) 0%,rgba(63,76,107,1) 100%);
   }
 
   &__login_register {
@@ -57,16 +60,16 @@ body {
 
 @media (min-width: 500px) {
   .wrapper {
-    grid-template-columns: 250px 1fr;
     grid-template-areas: "header menu"  "content content" "footer    footer";
+    grid-template-columns: 250px 1fr;
   }
 }
 
 @media (min-width: 700px) {
   .wrapper {
     grid-gap: unset;
-    grid-template-columns: 250px 1fr 1fr;
     grid-template-areas: "header header  header" ". loginRegister ." "menu content content" "footer content content";
+    grid-template-columns: 250px 1fr 1fr;
 
     &__header {
       grid-row: 1;
@@ -81,21 +84,22 @@ body {
     }
 
     &__footer {
-      grid-row: 2/3;
       align-self: end;
+      grid-row: 2/3;
     }
 
   }
 }
 
 .border-round-lg {
-  background: rgba(67, 91, 106, 0.71);
+  //background: rgba(67, 91, 106, 0.71);
   border-radius: 32px;
   padding: 20px;
 }
 
 .text-blue {
   color: #BFD8EE;
+
 }
 
 .bd_line_bottom {
@@ -108,4 +112,24 @@ body {
 
 .error-msg {
   color: #D43C2E;
+}
+
+.btn {
+  background: transparent;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font: 16px "Margarine", sans-serif;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  letter-spacing: 2px;
+
+  &:hover {
+    background-color: #FFFFFF;
+    color: #2E3B4C;
+    border: 3px solid #2E3B4C;
+  }
 }

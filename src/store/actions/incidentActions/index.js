@@ -89,7 +89,7 @@ export const getIncident = (incidentUUID, incidentType) => (dispatch) => {
 export const getIncidents = incidentType => (dispatch) => {
   dispatch(incidentRequest(true));
 
-  const url = `${baseURL}/incidents/${incidentType}`;
+  const url = `${baseURL}/${incidentType}`;
 
 
   return axios.get(url, authorizationHeader)

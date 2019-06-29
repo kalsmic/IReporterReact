@@ -8,6 +8,7 @@ import ViewIncident from '../ViewIncident';
 
 import '../../assets/Main.scss';
 import { isAuthenticated } from '../../../utils';
+import GetIncidents from '../GetIncidents';
 
 
 class IReporterApp extends Component {
@@ -61,6 +62,12 @@ class IReporterApp extends Component {
             exact
             strict
             component={CreateIncident}
+          />
+          <AuthenticatedRoute
+            path="/:incidentType"
+            exact
+            strict
+            component={GetIncidents}
           />
           <AuthenticatedRoute
             path="/:incidentType/:incidentUUID"

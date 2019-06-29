@@ -8,6 +8,7 @@ import { getIncident } from '../../store/actions/incidentActions';
 import './style.scss';
 import ViewIncidentMap from '../Map/viewIncident';
 import Root from '../Common/Root';
+import { formatDate } from '../../../utils';
 
 export class ViewIncident extends Component {
   constructor(props) {
@@ -42,16 +43,17 @@ export class ViewIncident extends Component {
           View Incident Record Details
         </h3>
         <div className="incident__card" />
-        <div className="incident__card-header">
-          <p className="incident__card-title">
-            Title:
-            <b>{title}</b>
-          </p>
+        <div className="incident__card__header">
+          <h1 className="incident__card__header__title">
+            {title}
+          </h1>
 
-          <p>
+          <span className="incident__card__header__created_on">
             Created On:
-            {createdOn}
-          </p>
+            {' '}
+            {createdOn && formatDate(createdOn)}
+
+          </span>
 
         </div>
         <div className="incident__card-comment">{comment && renderHTML(comment)}</div>
@@ -65,14 +67,19 @@ export class ViewIncident extends Component {
             />
           )}
         </div>
-        <div className="incident__card-footer">
+        <div className="incident__card__footer">
 
-          <p className="incident__card-status">{status}</p>
-          <p>
+          <span className="incident__card-status">
+            status:
             {' '}
+            {' '}
+            {status}
+          </span>
+          <span>
             Created by :
-            {createdBy}
-          </p>
+            {' '}
+            {createdBy && createdBy}
+          </span>
         </div>
 
 
